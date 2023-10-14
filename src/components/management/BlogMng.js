@@ -64,7 +64,7 @@ export default function BlogMng({setSelectedSidebarItem, setSelectedContentItem,
   const searchFieldOptions = [
     { label: 'Title', value: 'blogTitle' },
     { label: 'Status', value: 'blogStatus' },
-    { label: 'Category', value: 'blogCategory' },
+    { label: 'Category', value: 'blogCategoryName' },
     { label: 'Last Modified', value: 'updateTime' },
   ];
   // pagination config

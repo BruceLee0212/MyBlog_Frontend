@@ -17,8 +17,16 @@ const MngToolBar = ({ rows, selectedRows, setFilteredRows, searchFieldOptions, o
 
   const handleSearch = () => {
     const filteredRows = rows.filter((row) => {
-      const searchFieldValue = row[searchField];
-      return searchFieldValue.toString().toLowerCase().includes(searchKeyword.toLowerCase());
+      if(searchField === "blogStatus"){
+        let searchFieldValue;
+        if(row[searchField] === 0) searchFieldValue = "Draft"
+        else searchFieldValue = "Published"
+        return searchFieldValue.toString().toLowerCase().includes(searchKeyword.toLowerCase());
+      }
+      else{
+        const searchFieldValue = row[searchField];
+        return searchFieldValue.toString().toLowerCase().includes(searchKeyword.toLowerCase());
+      }
     });
     setFilteredRows(filteredRows);
   };

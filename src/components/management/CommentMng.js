@@ -89,8 +89,16 @@ export default function CommentMng() {
   // search func
   const handleSearch = () => {
     const filteredRows = rows.filter((row) => {
-      const searchFieldValue = row[searchField];
-      return searchFieldValue.toString().toLowerCase().includes(searchKeyword.toLowerCase());
+      if(searchField === "commentStatus"){
+        let searchFieldValue;
+        if(row[searchField] === 0) searchFieldValue = "Unapproved"
+        else searchFieldValue = "Approved"
+        return searchFieldValue.toString().toLowerCase().includes(searchKeyword.toLowerCase());
+      }
+      else{
+        const searchFieldValue = row[searchField];
+        return searchFieldValue.toString().toLowerCase().includes(searchKeyword.toLowerCase());
+      }
     });
     setFilteredRows(filteredRows);
   };
