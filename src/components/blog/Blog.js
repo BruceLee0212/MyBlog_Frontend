@@ -109,6 +109,13 @@ export default function Blog() {
     setFilteredBlogs(filteredRows);
   };
 
+  const handleCategoryClick = (categoryName) => {
+    const filteredRows = blogList.filter((row) => {
+      return row.blogCategoryName.toString().includes(categoryName);
+    });
+    setFilteredBlogs(filteredRows);
+  };
+
   const handleBlogEntryClick = (blogId, blogSubUrl) =>{
     handleViewIncrease(blogId);
     navigate(`/blog/${author}/blog-detail/${blogSubUrl}`);
@@ -182,7 +189,7 @@ export default function Blog() {
                     <span>
                       <span style={{ color: '#000080' }}>{authorName}</span>
                       <span style={{ color: '#ccc' }}> in </span>
-                      <span style={{ color: '#000080' }}>{blog.blogCategoryName}</span>
+                      <span onClick={() => handleCategoryClick(blog.blogCategoryName)} style={{ color: '#000080', cursor: 'pointer' }}>{blog.blogCategoryName}</span>
                     </span>
                   </div>
                   <span style={{ color: '#ccc' }}>{formattedTime}</span>
