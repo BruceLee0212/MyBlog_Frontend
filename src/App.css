@@ -1,0 +1,59 @@
+.header-cell {
+  padding: 8px;
+}
+
+.config-input {
+  width: 100%;
+  height: 30px;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.error-message-inline {
+  color: red;
+  margin-top: 0;
+  margin-bottom: 1px;
+}
+
+.dialog-header {
+  color: white;
+}
+
+.blog-header {
+  background-image: url('./assets/images/header.png');
+  background-size: cover;
+  background-position: center center;
+  height: 30vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.blog-title-link:hover {
+  color: green;
+}
+
+.elevator {
+  position: fixed;
+  right: -30px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: right 0.3s;
+}
+
+.elevator.visible {
+  right: 20px;
+  cursor: pointer;
+}
+
+.elevator-button {
+  cursor: pointer;
+}
