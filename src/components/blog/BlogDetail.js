@@ -29,6 +29,10 @@ export default function BlogDetail() {
   const [footerCopyRight, setFooterCopyRight] = useState('');
   const [footerPoweredBy, setFooterPoweredBy] = useState('');
   const [footerPoweredByUrl, setFooterPoweredByUrl] = useState('');
+  const [footerGithub, setFooterGithub] = useState('');
+  const [footerFacebook, setFooterFacebook] = useState('');
+  const [footerX, setFooterX] = useState('');
+  const [footerInstagram, setFooterInstagram] = useState('');
   const [websiteTitle, setWebsiteTitle] = useState('');
   const [websiteIcon, setWebsiteIcon] = useState();
   const [github, setGithub] = useState('');
@@ -58,6 +62,10 @@ export default function BlogDetail() {
         setFooterCopyRight(response.data.footerConfig.footerCopyRight);
         setFooterPoweredBy(response.data.footerConfig.footerPoweredBy);
         setFooterPoweredByUrl(response.data.footerConfig.footerPoweredByUrl);
+        setFooterGithub(response.data.websiteConfig.github);
+        setFooterFacebook(response.data.websiteConfig.facebook);
+        setFooterX(response.data.websiteConfig.x);
+        setFooterInstagram(response.data.websiteConfig.instagram);
         setWebsiteTitle(response.data.websiteTitle);
         setWebsiteIcon(response.data.websiteIcon);
         setGithub(response.data.github);
@@ -273,7 +281,7 @@ export default function BlogDetail() {
         </Box>}
       </Box>
       {blog && <Elevator authorEmail={blog.blogOwner}/>}
-      <Footer about={footerAbout} copyRight={footerCopyRight} poweredBy={footerPoweredBy} poweredByUrl={footerPoweredByUrl}/>
+      <Footer about={footerAbout} copyRight={footerCopyRight} poweredBy={footerPoweredBy} poweredByUrl={footerPoweredByUrl} footerGithub={footerGithub} footerFacebook={footerFacebook} footerX={footerX} footerInstagram={footerInstagram}/>
       {successMsg && <Snackbar
         anchorOrigin={{ vertical:"top", horizontal:"center" }}
         autoHideDuration={2000}

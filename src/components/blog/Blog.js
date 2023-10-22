@@ -40,6 +40,10 @@ export default function Blog() {
   const [footerCopyRight, setFooterCopyRight] = useState('');
   const [footerPoweredBy, setFooterPoweredBy] = useState('');
   const [footerPoweredByUrl, setFooterPoweredByUrl] = useState('');
+  const [footerGithub, setFooterGithub] = useState('');
+  const [footerFacebook, setFooterFacebook] = useState('');
+  const [footerX, setFooterX] = useState('');
+  const [footerInstagram, setFooterInstagram] = useState('');
   const [websiteTitle, setWebsiteTitle] = useState('');
   const [websiteIcon, setWebsiteIcon] = useState();
   const [github, setGithub] = useState('');
@@ -65,6 +69,10 @@ export default function Blog() {
         setFooterCopyRight(response.data.footerConfig.footerCopyRight);
         setFooterPoweredBy(response.data.footerConfig.footerPoweredBy);
         setFooterPoweredByUrl(response.data.footerConfig.footerPoweredByUrl);
+        setFooterGithub(response.data.websiteConfig.github);
+        setFooterFacebook(response.data.websiteConfig.facebook);
+        setFooterX(response.data.websiteConfig.x);
+        setFooterInstagram(response.data.websiteConfig.instagram);
         setWebsiteTitle(response.data.siteConfig.websiteTitle);
         setWebsiteIcon(response.data.siteIcon);
         setGithub(response.data.github);
@@ -398,7 +406,7 @@ export default function Blog() {
         />
       </Box>
       <Elevator authorEmail={authorEmail}/>
-      <Footer about={footerAbout} copyRight={footerCopyRight} poweredBy={footerPoweredBy} poweredByUrl={footerPoweredByUrl}/>
+      <Footer about={footerAbout} copyRight={footerCopyRight} poweredBy={footerPoweredBy} poweredByUrl={footerPoweredByUrl} footerGithub={footerGithub} footerFacebook={footerFacebook} footerX={footerX} footerInstagram={footerInstagram}/>
     </Box>
   );
 }
